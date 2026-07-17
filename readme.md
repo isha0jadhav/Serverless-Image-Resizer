@@ -8,18 +8,7 @@ A fully serverless AWS application that allows users to upload images through a 
 
 This project demonstrates an event-driven, serverless architecture using AWS services. Instead of uploading files through a traditional backend server, the frontend requests a secure Presigned URL from AWS Lambda via API Gateway. The browser uploads the image directly to Amazon S3, which triggers another Lambda function to resize the image using the Pillow library.
 
-The processed image is stored in a separate S3 bucket and can then be viewed or downloaded.
-
----
-
-## 🌐 Live Demo
-
-**Frontend Website**
-
-```
-http://serverless-image-resizer-web.s3-website.ap-south-1.amazonaws.com/
-```
-
+The processed image is stored in a separate S3 bucket and can then be viewed or download.
 ---
 
 ## 🏗️ Architecture
