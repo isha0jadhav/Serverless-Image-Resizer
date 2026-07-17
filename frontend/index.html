@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serverless Image Resizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="background-blur blur1"></div>
+<div class="background-blur blur2"></div>
+
+<header class="hero">
+    <h1>☁️ Serverless Image Resizer</h1>
+    <p>Upload an image securely to Amazon S3 using Presigned URLs. AWS Lambda automatically resizes it and makes it available for download.</p>
+</header>
+
+<main class="container">
+
+    <section class="upload-card glass">
+
+    <h2>Upload Image</h2>
+
+    <div id="dropArea" class="upload-area">
+
+        <div class="upload-icon">📷</div>
+
+        <h3>Select an Image</h3>
+
+        <p>Drag & Drop or Browse</p>
+
+        <button
+            type="button"
+            id="browseBtn"
+            class="browse-btn">
+            Browse Files
+        </button>
+
+        <input
+            type="file"
+            id="fileInput"
+            accept="image/*"
+            style="display:none;">
+
+    </div>
+
+    <button id="uploadBtn">
+        Upload to AWS
+    </button>
+
+    <div class="progress-wrapper">
+        <div class="progress-bar">
+            <div id="progress"></div>
+        </div>
+    </div>
+
+    <p id="status">
+        Waiting for upload...
+    </p>
+
+</section>
+
+    <section class="images">
+
+        <div class="image-card glass">
+
+            <h2>Original Image</h2>
+
+            <img id="originalPreview"
+                 src=""
+                 alt="Original Preview">
+
+            <div class="details">
+
+                <p><strong>Name:</strong>
+                    <span id="originalName">-</span>
+                </p>
+
+                <p><strong>Size:</strong>
+                    <span id="originalSize">-</span>
+                </p>
+
+                <p><strong>Dimensions:</strong>
+                    <span id="originalDimensions">-</span>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="image-card glass">
+
+            <h2>Resized Image</h2>
+
+            <img id="resizedPreview"
+                 src=""
+                 alt="Resized Preview">
+
+            <div class="details">
+
+                <p><strong>Name:</strong>
+                    <span id="resizedName">-</span>
+                </p>
+
+                <p><strong>Size:</strong>
+                    <span id="resizedSize">Waiting...</span>
+                </p>
+
+                <p><strong>Dimensions:</strong>
+                    <span id="resizedDimensions">Waiting...</span>
+                </p>
+
+            </div>
+
+            <a
+        id="downloadBtn"
+        class="download-btn"
+        href="#"
+        download
+        target="_blank">
+
+        ⬇ Download Resized Image
+
+    </a>
+
+        </div>
+
+    </section>
+
+    <section class="architecture glass">
+
+        <h2>AWS Workflow</h2>
+
+        <div class="flow">
+
+            <div>Browser</div>
+            <span>→</span>
+
+            <div>API Gateway</div>
+            <span>→</span>
+
+            <div>Upload URL Lambda</div>
+            <span>→</span>
+
+            <div>S3</div>
+            <span>→</span>
+
+            <div>Resize Lambda</div>
+            <span>→</span>
+
+            <div>Resized Bucket</div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+
+Built with ❤️ using
+Amazon S3 • AWS Lambda • API Gateway • Presigned URLs • Pillow
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
