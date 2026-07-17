@@ -167,21 +167,6 @@ The Lambda function resizes and optimizes the uploaded image using Pillow.
 
 The resized image is stored in a separate S3 bucket and becomes available for viewing or downloading.
 
----
-
-# 📸 Screenshots
-
-Add screenshots here after deployment.
-
-Example:
-
-- Home Page
-- Upload Image
-- Original Bucket
-- Resized Bucket
-- API Gateway
-- Lambda Console
-- CloudWatch Logs
 
 ---
 
